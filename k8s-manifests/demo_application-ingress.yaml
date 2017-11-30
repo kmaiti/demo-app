@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: demoapplication
+  name: demoapplication
+  namespace: test
+spec:
+  tls:
+  - hosts:
+    - demoapp.gig.aws.cps.vodafone.com
+    secretName: gigsecret
+  rules:
+  - host: demoapp.gig.aws.cps.vodafone.com
+    http:
+      paths:
+      - backend:
+          serviceName: demoapplication
+          servicePort: 9900
+        path: /

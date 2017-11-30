@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: demoapplication
+  namespace: test
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demoapplication
+      namespace: test
+    spec:
+      containers:
+      - name: demoapplication
+        image: nexus-registry.gig.aws.cps.vodafone.com/demo-app:latest
+        ports:
+        - containerPort: 9900
+          name: http
+          protocol: TCP
+        imagePullPolicy: Always
+      imagePullSecrets:
+       - name: gig3-image-pullsecret
