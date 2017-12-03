@@ -10,7 +10,7 @@ spec:
   tls:
   - hosts:
     - demoapp.gig.aws.cps.vodafone.com
-    secretName: gigsecret
+    secretName: gig3-multisite-cert-secret 
   rules:
   - host: demoapp.gig.aws.cps.vodafone.com
     http:
