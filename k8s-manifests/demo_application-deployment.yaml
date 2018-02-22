@@ -13,11 +13,11 @@ spec:
     spec:
       containers:
       - name: demoapplication
-        image: nexus-registry.gig.aws.cps.vodafone.com/demo-app:latest
+        image: nexus.tools.aws.cps.vodafone.com/demo-app:latest
         ports:
         - containerPort: 9900
           name: http
           protocol: TCP
         imagePullPolicy: Always
       imagePullSecrets:
-       - name: gig3-image-pullsecret
+       - name: tools-multisite-cert-secret

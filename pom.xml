@@ -90,14 +90,15 @@
     </build>
   <distributionManagement>
     <repository>
-      <id>gig3-releases</id>
+      <id>tools-releases</id>
       <name>Releases</name>
-      <url>https://nexus-ui.gig.aws.cps.vodafone.com/repository/gig3-releases/</url>
+      <url>https://nexus-ui.tools.aws.cps.vodafone.com/repository/tools-releases/</url>
     </repository>
     <snapshotRepository>
-      <id>gig3-snapshots</id>
+      <id>tools-snapshots</id>
       <name>Snapshot</name>
-      <url>https://nexus-ui.gig.aws.cps.vodafone.com/repository/gig3-snapshots/</url>
+      <url>https://nexus-ui.tools.aws.cps.vodafone.com/repository/tools-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
+
 </project>

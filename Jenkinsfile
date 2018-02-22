@@ -18,13 +18,13 @@ pipeline {
               mvn -X -s $MAVEN_SETTINGS -Drevision=latest -U -X clean  deploy
 
               echo "STARTED: Docker Nexus Login"
-              docker login nexus-registry.gig.aws.cps.vodafone.com --username ${USERNAME} --password ${PASSWORD}
+              docker login nexus.tools.aws.cps.vodafone.com --username ${USERNAME} --password ${PASSWORD}
 
              echo "STARTED: Docker image build"
-             docker build  -t nexus-registry.gig.aws.cps.vodafone.com/demo-app:latest .
+             docker build  -t nexus.tools.aws.cps.vodafone.com/demo-app:latest .
 
              echo "STARTED: Docker images push"
-             docker push nexus-registry.gig.aws.cps.vodafone.com/demo-app:latest
+             docker push nexus.tools.aws.cps.vodafone.com/demo-app:latest
               """
 
                    }
