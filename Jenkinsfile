@@ -33,23 +33,6 @@ pipeline {
       }
     }
 
-        stage('SonarQube analysis') {
-               agent {
-               label "docker"
-            }
-           steps {
-          configFileProvider([configFile(fileId: 'cbe2d6a4-3926-4ce9-ba76-b2c30c858ffd', variable: 'MAVEN_SETTINGS')]) {
-                 container('docker') {
-                  withSonarQubeEnv('gig3-sonarqube') {
-                 sh """
-                    mvn -X -s $MAVEN_SETTINGS clean install
-                    mvn -X -s $MAVEN_SETTINGS sonar:sonar
-                 """
-              }
-           }
-         }
-       }
-    }
 
 
 
