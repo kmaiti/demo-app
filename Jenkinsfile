@@ -9,7 +9,7 @@ pipeline {
         label "docker"
       }
       steps {
-            configFileProvider([configFile(fileId: 'cbe2d6a4-3926-4ce9-ba76-b2c30c858ffd', variable: 'MAVEN_SETTINGS')]) {
+            configFileProvider([configFile(fileId: 'maven-settings-file', variable: 'MAVEN_SETTINGS')]) {
           container('docker') {
                      withCredentials([usernamePassword(credentialsId: 'nexus-functional-user', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 
