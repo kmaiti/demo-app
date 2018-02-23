@@ -20,4 +20,4 @@ spec:
           protocol: TCP
         imagePullPolicy: Always
       imagePullSecrets:
-       - name: tools-multisite-cert-secret
+       - name: tools-image-pullsecret
