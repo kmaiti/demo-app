@@ -100,5 +100,4 @@
       <url>https://nexus-ui.tools.aws.cps.vodafone.com/repository/tools-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
-
 </project>
