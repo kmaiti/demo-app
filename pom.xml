@@ -91,12 +91,12 @@
     <repository>
       <id>tools-releases</id>
       <name>Releases</name>
-      <url>https://nexus-ui.tools.aws.cps.vodafone.com/repository/tools-releases/</url>
+      <url>https://nexus-ui.tools.aws.cps.example.com/repository/tools-releases/</url>
     </repository>
     <snapshotRepository>
       <id>tools-snapshots</id>
       <name>Snapshot</name>
-      <url>https://nexus-ui.tools.aws.cps.vodafone.com/repository/tools-snapshots/</url>
+      <url>https://nexus-ui.tools.aws.cps.example.com/repository/tools-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 </project>

@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - demoapp.tools.aws.cps.vodafone.com
+    - demoapp.tools.aws.cps.example.com
     secretName: tools-multisite-cert-secret
   rules:
-  - host: demoapp.tools.aws.cps.vodafone.com
+  - host: demoapp.tools.aws.cps.example.com
     http:
       paths:
       - backend:

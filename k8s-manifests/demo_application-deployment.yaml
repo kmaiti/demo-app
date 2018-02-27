@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: demoapplication
-        image: nexus.tools.aws.cps.vodafone.com/demo-app:latest
+        image: nexus.tools.aws.cps.example.com/demo-app:latest
         ports:
         - containerPort: 9900
           name: http
