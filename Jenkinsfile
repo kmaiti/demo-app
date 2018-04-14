@@ -11,7 +11,7 @@ pipeline {
 
              sh """
               mvn -version
-              mvn -X -s $MAVEN_SETTINGS -Drevision=latest -U -X clean  deploy
+              mvn -X -s $MAVEN_SETTINGS -Drevision=latest -U clean  deploy
 
               echo "STARTED: Docker Nexus Login"
               docker login 13.127.248.170:5000 --username ${USERNAME} --password ${PASSWORD}
@@ -21,6 +21,9 @@ pipeline {
 
              echo "STARTED: Docker images push"
              docker push 13.127.248.170:5000/demo-app:latest
+			 
+			 echo "Remove image from local machine"
+			 docker rmi 13.127.248.170:5000/demo-app:latest
               """
 			  }        
            }
