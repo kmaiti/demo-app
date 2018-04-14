@@ -89,14 +89,14 @@
     </build>
   <distributionManagement>
     <repository>
-      <id>tools-releases</id>
+      <id>dis-releases</id>
       <name>Releases</name>
-      <url>https://nexus-ui.tools.aws.cps.example.com/repository/tools-releases/</url>
+      <url>http://13.127.248.170:8081/repository/dis-releases/</url>
     </repository>
     <snapshotRepository>
-      <id>tools-snapshots</id>
+      <id>dis-snapshots</id>
       <name>Snapshot</name>
-      <url>https://nexus-ui.tools.aws.cps.example.com/repository/tools-snapshots/</url>
+      <url>http://13.127.248.170:8081/repository/dis-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
