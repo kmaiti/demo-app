@@ -14,16 +14,16 @@ pipeline {
               mvn -X -s $MAVEN_SETTINGS -Drevision=latest -U clean  deploy
 
               echo "STARTED: Docker Nexus Login"
-              docker login 13.127.248.170:5000 --username ${USERNAME} --password ${PASSWORD}
+              docker login localhost:5000 --username ${USERNAME} --password ${PASSWORD}
 
              echo "STARTED: Docker image build"
-             docker build  -t 13.127.248.170:5000/demo-app:latest .
+             docker build  -t localhost:5000/demo-app:latest .
 
              echo "STARTED: Docker images push"
-             docker push 13.127.248.170:5000/demo-app:latest
+             docker push localhost:5000/demo-app:latest
 			 
 			 echo "Remove image from local machine"
-			 docker rmi 13.127.248.170:5000/demo-app:latest
+			 docker rmi localhost:5000/demo-app:latest
               """
 			  }        
            }
