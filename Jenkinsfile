@@ -24,6 +24,8 @@ pipeline {
 			 
 			 echo "Remove image from local machine"
 			 docker rmi localhost:5000/demo-app:latest
+			 
+			 echo "testing for Mayank"
               """
 			  }        
            }
