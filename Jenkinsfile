@@ -37,7 +37,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-          ssh """
+          sh """
 		    ssh ubuntu@10.0.0.140 bash -c "'
             whoami ; hostname
            '"
