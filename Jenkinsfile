@@ -36,6 +36,7 @@ pipeline {
     stage('Deploy') {
       steps {
           sh """
+		  echo "ssh to machine where image will be deplyed, stop running container, start it with new image.IP will be nexus registry IP"
            echo test
           """
         }
