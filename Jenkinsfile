@@ -38,7 +38,7 @@ pipeline {
     stage('Deploy') {
       steps {
           sh """
-		    ssh -T 10.0.0.140 << EOSSH
+		    ssh ubuntu@10.0.0.140 << EOSSH
             whoami
            EOSSH
           """
