@@ -42,7 +42,7 @@ pipeline {
               NEXUS_REGISTRY=10.0.0.207:5000
               DOCKER_USERNAME=dis-functional
               DOCKER_PASSWORD=dis-functional
-              LOCAL_IMAGE_IDS=`sudo docker images|grep $APP|awk '{print $1}'`
+              LOCAL_IMAGE_IDS=`sudo docker images|grep $APP|awk '{print \$1}'`
 			  echo $LOCAL_IMAGE_IDS
            '"
 		   
