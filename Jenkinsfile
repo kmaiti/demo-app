@@ -32,20 +32,23 @@ pipeline {
        }
     }
 
-
-
-
     stage('Deploy') {
       steps {
           sh """
 		    ssh ubuntu@10.0.0.140 bash -c "'
             whoami ; hostname
+			  IMAGE_VERSION_TO_BE_DEPLOYED=latest
+              APP=demo-app
+              NEXUS_REGISTRY=10.0.0.207:5000
+              DOCKER_USERNAME=dis-functional
+              DOCKER_PASSWORD=dis-functional
+              LOCAL_IMAGE_IDS=`sudo docker images|grep $APP|awk '{print $1}'`
+			  echo $LOCAL_IMAGE_IDS
            '"
 		   
           """
         }
     }
-
  }
 }
 
