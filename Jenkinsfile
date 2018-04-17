@@ -35,21 +35,11 @@ pipeline {
     stage('Deploy') {
       steps {
           sh """
-		    
-            
-			  IMAGE_VERSION_TO_BE_DEPLOYED=latest
-              APP=demo-app
-              NEXUS_REGISTRY=10.0.0.207:5000
-              DOCKER_USERNAME=dis-functional
-              DOCKER_PASSWORD=dis-functional
-			  
-			  ssh ubuntu@10.0.0.140 bash -c "' 
-			  
-              LOCAL_IMAGE_IDS=`sudo docker images|grep $APP|awk '{print \$1}'`
-			 
-			  echo $LOCAL_IMAGE_IDS
-           '"
-		   
+		      app=demo-app
+			  img=`ssh ubuntu@10.0.0.140 bash -c "'
+                  sudo docker images|grep $app
+                  '"`				  
+ 	          echo $img
           """
         }
     }
