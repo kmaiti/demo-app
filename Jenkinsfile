@@ -40,7 +40,7 @@ pipeline {
 		   
            ssh ubuntu@10.0.0.140 bash -c "'
              
-			sudo docker rm $(docker stop $(docker ps -a -q --filter ancestor=10.0.0.207:5000/demo-app:latest --format="{{.ID}}"))
+			sudo docker ps -a -q --filter ancestor=10.0.0.207:5000/demo-app:latest |xargs -r docker stop
            '"
         
 		   
