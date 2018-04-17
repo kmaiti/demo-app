@@ -35,7 +35,7 @@ pipeline {
     stage('Deploy') {
       steps {
 	    script {
-		  def PS
+		  
           sh """
 		   
            PS=`ssh ubuntu@10.0.0.140 bash -c "'
