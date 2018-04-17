@@ -36,9 +36,10 @@ pipeline {
       steps {
           sh """
            ssh ubuntu@10.0.0.140 bash -c "'
-           sudo docker images|grep demo-app
+           img=`sudo docker images|grep demo-app`
+		   echo $img
 		   sudo docker ps|grep demo-app
-		   sudo docker login 13.127.248.170 -u=dis-functional -p=dis-functional
+		   sudo docker login 10.0.0.207:5000 -u=dis-functional -p=dis-functional
            '"
 
           """
