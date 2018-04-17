@@ -35,11 +35,9 @@ pipeline {
     stage('Deploy') {
       steps {
           sh """
-app=demo-app
-img=`ssh ubuntu@10.0.0.140 bash -c "'
-sudo docker images|grep $app
-'"`
-echo $img
+           ssh ubuntu@10.0.0.140 bash -c "'
+           sudo docker images|grep demo
+           '"
 
           """
         }
