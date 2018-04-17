@@ -34,16 +34,17 @@ pipeline {
 
     stage('Deploy') {
       steps {
+	    script {
+		  def PS=null
           sh """
-           ssh ubuntu@10.0.0.140 bash -c "'
-           sudo docker images|grep demo-app
 		   
-		   sudo docker ps|grep demo-app
-		   sudo docker login 10.0.0.207:5000 -u=dis-functional -p=dis-functional
-           '"
-
+           PS=`ssh ubuntu@10.0.0.140 bash -c "'
+             sudo docker ps|grep demo-app
+           '"`
+           echo $PS
           """
         }
+	   }	
     }
  }
 }
