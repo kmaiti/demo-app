@@ -25,7 +25,7 @@ pipeline {
 			 echo "Remove image from local machine"
 			 docker rmi localhost:5000/demo-app:latest
 			 
-			 echo "testing for Mayank"
+			 
               """
 			  }        
            }
@@ -35,11 +35,12 @@ pipeline {
     stage('Deploy') {
       steps {
           sh """
-		      app=demo-app
-			  img=`ssh ubuntu@10.0.0.140 bash -c "'
-                  sudo docker images|grep $app
-                  '"`				  
- 	          echo $img
+app=demo-app
+img=`ssh ubuntu@10.0.0.140 bash -c "'
+sudo docker images|grep $app
+'"`
+echo $img
+
           """
         }
     }
