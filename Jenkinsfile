@@ -41,9 +41,9 @@ pipeline {
 		   
            PS=`ssh ubuntu@10.0.0.140 bash -c "'
              sudo docker ps|grep demo-app
-			 echo ${PS}
+			 
            '"`
-           
+           echo ${PS}|awk '{print $1}'
 		   
           """
 
