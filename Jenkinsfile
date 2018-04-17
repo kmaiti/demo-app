@@ -41,8 +41,12 @@ pipeline {
            ssh ubuntu@10.0.0.140 bash -c "'
              
 			sudo docker ps -a -q --filter ancestor=10.0.0.207:5000/demo-app:latest |xargs -r sudo docker stop
-           '"
-        
+			sudo docker ps -a -q -f status=exited|xargs -r sudo docker rm -v
+			sudo docker images --format "{{.ID}} {{.Repository}}"|grep demo-app|xargs -r sudo docker rmi -f
+			
+			sudo docker login 10.0.0.207:5000 -u=dis-functional -p=dis-functional
+			sudo docker run -itd  --name demo-app -p 8000:8000 10.0.0.207:5000/demo-app:latest
+           '"       
 		   
           """
 
