@@ -43,7 +43,7 @@ pipeline {
              sudo docker ps|grep demo-app
 			 
            '"`
-           echo ${PS}|awk '{print $1}'
+           echo ${PS}
 		   
           """
 
