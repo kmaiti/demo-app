@@ -35,7 +35,7 @@ pipeline {
     stage('Deploy') {
       steps {
 	    script {
-		  
+		  withCredentials([usernamePassword(credentialsId: 'dis-functional', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh """
 		   
            ssh ubuntu@10.0.0.140 bash -c "'
@@ -44,12 +44,12 @@ pipeline {
 			sudo docker ps -a -q -f status=exited|xargs -r sudo docker rm -v
 			sudo docker images --format "{{.ID}} {{.Repository}}"|grep demo-app|xargs -r sudo docker rmi -f
 			
-			sudo docker login 10.0.0.207:5000 -u=dis-functional -p=dis-functional
+			sudo docker login 10.0.0.207:5000 -u=${USERNAME} -p=${PASSWORD}
 			sudo docker run -itd  --name demo-app -p 8000:8000 10.0.0.207:5000/demo-app:latest
            '"       
 		   
           """
-
+         }
         }
 	   }	
     }
