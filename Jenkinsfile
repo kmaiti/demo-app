@@ -36,13 +36,16 @@ pipeline {
       steps {
 	    script {
 		  def PS=null
+		  env.PS=PS
           sh """
 		   
            PS=`ssh ubuntu@10.0.0.140 bash -c "'
              sudo docker ps|grep demo-app
            '"`
-           echo $PS
+           echo ${PS}
+		   
           """
+		  println $PS
         }
 	   }	
     }
