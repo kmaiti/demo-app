@@ -39,10 +39,10 @@ pipeline {
           sh """
 		   
            PS=`ssh ubuntu@10.0.0.140 bash -c "'
-             sudo docker ps|grep demo-app
-			 
+             
+			 docker rm $(docker stop $(docker ps -a -q --filter ancestor=10.0.0.207:5000/demo-app:latest --format="{{.ID}}"))
            '"`
-           echo ${PS}
+        
 		   
           """
 
